@@ -283,6 +283,18 @@ ECDSAKEY_SCHEMA = SCHEMA.Object(
   keyid_hash_algorithms = SCHEMA.Optional(HASHALGORITHMS_SCHEMA),
   keyval = KEYVAL_SCHEMA)
 
+# SPHINCS Private and Public Keys
+SPHINCS264_PUBLIC_SCHEMA = SCHEMA.Object(
+    object_name = 'SPHINCS264_PUBLIC_SCHEMA',
+    public1 = SCHEMA.LengthBytes(32),
+    q = SCHEMA.LengthBytes(134))
+
+SPHINCS264_PRIVATE_SCHEMA = SCHEMA.Object(
+    object_name = 'SPHINCS264_PRIVATE_SCHEMA',
+    private1 = SCHEMA.LengthBytes(32),
+    private2 = SCHEMA.LengthBytes(32),
+    q = SCHEMA.LengthBytes(134))
+
 # An ED25519 raw public key, which must be 32 bytes.
 ED25519PUBLIC_SCHEMA = SCHEMA.LengthBytes(32)
 
